@@ -295,7 +295,7 @@ if st.checkbox('Obtener por fechas y barrio', False):
        
        
        cells=dict(values=[df2.Fecha,df2.Barrio, df2.Disparos],
-               fill_color='black',
+               fill_color='red',
                line_color='darks lategray'))])
     
     fig.update_layout(width=500, height=450)
