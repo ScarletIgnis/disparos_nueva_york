@@ -107,11 +107,11 @@ c5.text('Hora: '+ str(top_perp_name)+'; '+str(top_perp_num)+'%')
 c1, c2 = st.columns((1,1)) #para que separe por partes iguales el dash board aunque si se pone como 1/3 algo ocupa un cuarto por ejemplo
 
 c1.markdown("<h3 style='tex-align: center; color:#FF2D00; '> ¿Donde han ocurrido disparos en New York ? </h3>",unsafe_allow_html =True)
-year=c1.slider('Año en el que ocurrió el suceso', df.year.min(), df.year.max())
+year=c1.slider('Año en el que ocurrió el suceso', 2006, 2020 )
 c1.map(df[df['year']==year][['latitude','longitude']])
 
 c2.markdown("<h3 style='tex-align: center; color:#FF2D00; '> ¿A que horas han ocurrido disparos en New York ? </h3>",unsafe_allow_html =True)
-hour=c2.slider('Hora en la que ocurrió el suceso', int(df.hour.min()), int(df.hour.max()))
+hour=c2.slider('Hora en la que ocurrió el suceso', 0 , 23)
 df2=df[df['hour']==hour]
 
 c2.write(pdk.Deck(
